@@ -8,54 +8,46 @@
     </head>
 
     <body>
-        <!--Main page section-->
-       <section>
-        <!--navigation in top corners-->
-        <nav>
+        <header>
             <a id="high-score-board" href="#">View Highscores</a>
             <div id="timer">Time: <span id="time-left">90</span></div>
-        </nav>
+        </header>
+        <div id="container">
+            <div class="box">
+             <!--will use hide class to toggle display of elements-->
+                <div id="question-container" class="hide">
+                    <div id="question"></div>
+                    <div id="answer-buttons" class="btn-grid">
+                        <button class="btnc hoice"></button>
+                        <button class="btn choice"></button>
+                        <button class="btn choice"></button>
+                        <button class="btn choice"></button>
+                    </div>
+                </div>
 
-        <div>
-            <h1>Coding Quiz Challenge</h1>
-            <p>Try to answer the following code-related questions within the time limit. Incorrect answers will deduct your score/time by ten seconds. Click the "Begin Quiz" button to start the quiz.</p>
-        </div>
-        <!--will use hide class to toggle display of elements-->
-        <div id="question-container" class="hide">
-            <div id="question"></div>
-                <div id="answer-buttons" class="btn-grid">
-                    <button class="btnc hoice"></button>
-                    <button class="btn choice"></button>
-                    <button class="btn choice"></button>
-                    <button class="btn choice"></button>
+                <div class="controls">
+                <button id="start-btn" class="start-btn hide">Begin Quiz</button>
+                </div>
+
+                <div id="high-score-submission" class="enter-highscores hide">
+                    <p>All Done!</p>
+                    <p>Your final score is: <span id="time-remaining"></span></p>
+                    <label for="initials">Initials:</label>
+                    input type="text" id="initials" name="initials">
+                    <input type="submit" class="button" id="submit-button">
+                </div>
+
+                <div id="score-board" class="hide">
+                    <h1>All-time High Scores</h1>
+                    <ul class="high-score-board" id="hs-board"></ul>
                 </div>
             </div>
+            <!--flash on screen? in new window>-->
+            <div id="feedback">
+                <p id="correct" class="hide">Correct!</p>
+                <p id="incorrect" class="hide">Incorrect!</p>
+            </div>
         </div>
-
-        <div class="controls">
-            <button id="start-btn" class="start-btn hide">Begin Quiz</button>
-        </div>
-
-        <div id="high-score-submission" class="enter-highscores hide">
-            <p>All Done!</p>
-            <p>Your final score is: <span id="time-remaining"></span></p>
-            <label for="Initials">Initials:</label>
-            <input type="text" id="Initials" name="Initials">
-            <input type="submit" class="button" id="submit-button">
-        </div>
-
-        <div id="score-board" class="hide">
-            <h1>All-time High Scores</h1>
-            <ul class="high-score-board" id="hs-board"></ul>
-        </div>
-        <!--flash on screen? in new window>-->
-        <div id="feedback">
-            <p id="correct" class="hide">Correct!</p>
-            <p id="incorrect" class="hide">Incorrect!</p>
-        </div>
-
-       </section>
-
        <script src="script.js"></script>
     </body>
 

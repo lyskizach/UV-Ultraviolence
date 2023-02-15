@@ -1,0 +1,41 @@
+body {
+    font-family:Lucida, Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #f9f9f9;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    color: black;
+}
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 90%;
+    flex-direction: column;
+    background-color: #8c8f94;
+    border-radius: 10px;
+}
+
+#container h1, #container p {
+    text-align:center;
+}
+/*.hide {
+    display:none;
+}
+*/
+.box {
+    display: flex;
+    max-width: 90%;
+    max-height:90%;
+    height: auto;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 5px 1px;
+    flex-direction: column;
+    text-align: center;
+}
