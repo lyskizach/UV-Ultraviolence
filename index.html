@@ -13,27 +13,32 @@
             <div id="timer">Time: <span id="time-left">90</span></div>
         </header>
         <div id="container">
+            <div class="intro">
+                <h1>Coding Quiz Challenge</h1>
+                <p>Try to answer the following code-related questions within the time allotted. Keep in mind that incorrect answers will deduct your score/time by ten seconds. Click on the "Begin Quiz" button to start!</p>
+            </div>
             <div class="box">
              <!--will use hide class to toggle display of elements-->
+             <!--note to self... be very careful about the placement of children within the parent! to be able to properly contain and then style with css-->
                 <div id="question-container" class="hide">
-                    <div id="question"></div>
-                    <div id="answer-buttons" class="btn-grid">
-                        <button class="btnc hoice"></button>
-                        <button class="btn choice"></button>
-                        <button class="btn choice"></button>
-                        <button class="btn choice"></button>
+                    <div id="question">???</div>
+                    <div id="answer-buttons">
+                        <button class="button choice"></button>
+                        <button class="button choice"></button>
+                        <button class="button choice"></button>
+                        <button class="button choice"></button>
                     </div>
                 </div>
 
                 <div class="controls">
-                <button id="start-btn" class="start-btn hide">Begin Quiz</button>
+                <button id="start-btn" class="button hide">Begin Quiz</button>
                 </div>
 
-                <div id="high-score-submission" class="enter-highscores hide">
+                <div class="enter-highscores hide" id="high-score-submission">
                     <p>All Done!</p>
-                    <p>Your final score is: <span id="time-remaining"></span></p>
+                    <p>Your score is: <span id="time-remaining"></span></p>
                     <label for="initials">Initials:</label>
-                    input type="text" id="initials" name="initials">
+                    <input type="text" id="initials" name="initials">
                     <input type="submit" class="button" id="submit-button">
                 </div>
 

@@ -1,6 +1,6 @@
 body {
     font-family:Lucida, Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #f9f9f9;
+    background-color: #e6e6fa;
 }
 
 header {
@@ -9,6 +9,7 @@ header {
     margin: 10px;
     color: black;
 }
+
 #container {
     display: flex;
     justify-content: center;
@@ -22,15 +23,13 @@ header {
 
 #container h1, #container p {
     text-align:center;
+    padding: 0px, 5px, 0px, 0px;
 }
-/*.hide {
-    display:none;
-}
-*/
+
 .box {
     display: flex;
-    max-width: 90%;
-    max-height:90%;
+    width:90%;
+    height:90%;
     height: auto;
     background-color: white;
     border-radius: 5px;
@@ -38,4 +37,53 @@ header {
     box-shadow: 0 0 5px 1px;
     flex-direction: column;
     text-align: center;
+}
+
+#answer-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    padding: 10px;
+    margin: 20px;
+    height:100px;
+}
+
+.button {
+    background-color: #7b68ee;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 8px;
+    outline: none;
+}
+
+.button:hover {
+    opacity: 75%;
+}
+
+#start-btn {
+    font-size:25px;
+}
+
+.hide {
+    display:none;
+}
+
+a {
+    text-decoration:underline;
+    color:black;
+}
+
+a:hover {
+    opacity: 55%;
+}
+
+#score-board h1 {
+    justify-content: center;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+#feedback {
+    opacity:65%;
+    font-style:italic;
 }
