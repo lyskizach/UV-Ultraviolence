@@ -7,11 +7,11 @@ const incorrect = document.getElementById("incorrect");
 
 var hsBoard = document.getElementById("score-board");
 var start = document.getElementById("start-btn");
-var timer = document.getElementById("time-left");
+var timerEl = document.getElementById("time-left");
 var countDown;
 var hsSubmission = document.getElementById("high-score-submission");
 var initials = document.getElementById("initials");
-var counter = 90;
+
 
 
 // changing visibility ***
@@ -33,10 +33,20 @@ function showScoreBoard() {
 
 function startQuiz() {
     start.classList.add("hide");
+    timerEl.classList.remove("hide");
+    countDown();
     quizQuestionsBox.classList.remove("hide");
 };
 
 
-var questionsArray = [
-
-]
+function countDown() {
+    var timeRemaining = 90;
+    var timeInterval = setInterval(function () {
+        if (timeRemaining >= 0) {
+            timerEl.textContent = "Seconds remaining: " + timeRemaining;
+            timeRemaining--;
+        } else {
+            clearInterval(timeInterval);
+        }
+    }, 1000);
+};

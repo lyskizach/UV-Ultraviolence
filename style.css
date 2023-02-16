@@ -15,7 +15,7 @@ header {
     justify-content: center;
     align-items: center;
     width: 90%;
-    height: 90%;
+    max-height:90%;
     flex-direction: column;
     background-color: #8c8f94;
     border-radius: 10px;
@@ -37,6 +37,7 @@ header {
     box-shadow: 0 0 5px 1px;
     flex-direction: column;
     text-align: center;
+    margin-bottom: 5px;
 }
 
 #answer-buttons {
