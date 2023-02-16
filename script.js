@@ -24,12 +24,18 @@ start.addEventListener("click", startQuiz);
 document.getElementById("high-score-board").addEventListener("click", showScoreBoard);
 
 function showScoreBoard() {
-    hsBoard.classList.remove("hide");
+    if(hsBoard.classList.value === "hide") {
+        hsBoard.classList.remove("hide")}
+    else if(hsBoard.classList.value != "hide") {
+        hsBoard.classList.add("hide")
+    }
 };
 
 function startQuiz() {
     start.classList.add("hide");
+    quizQuestionsBox.classList.remove("hide");
 };
+
 
 var questionsArray = [
 
