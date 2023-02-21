@@ -18,7 +18,9 @@ var selectAnswer;
 var randomQ;
 var countDown;
 var timeRemaining = 90;
-
+var currentQuestionIndex = 0;
+// var for collectScores?
+// var for "enter-highscores" - the div for entering initials
 
 var questions = [
     {   question: "What is 2+2",
@@ -49,19 +51,8 @@ function showScoreBoard() {
     }
 }
 
-function countDown() {
-    var timeInterval = setInterval(function () {
-        if (timeRemaining >= 0) {
-            timerEl.textContent = "Seconds remaining: " + timeRemaining;
-            timeRemaining--;
-        } else {
-            clearInterval(timeInterval);
-        }
-    }, 1000);
-}
-var currentQuestionIndex = 0;
 function startQuiz() {
-    countDown();
+    countDown = setInterval(timer, 1000);
     start.classList.add("hide");
     timerEl.classList.remove("hide");
     quizQuestionsBox.classList.remove("hide");
@@ -74,7 +65,7 @@ function startQuiz() {
 function setNextQuestion() {
     if (currentQuestionIndex >= questions.length) {
         clearInterval(countDown);
-        submitHS();
+        initEnd();
     } else {
         showQuestion(randomQ[currentQuestionIndex]);
     }
@@ -106,10 +97,23 @@ function selectAnswer(event) {
     }
 }
 
-function submitHS() {
+function initEnd() {
     quizQuestionsBox.classList.add("hide");
     hsBoard.classList.remove("hide");
     timerEl.textContent =  timeRemaining;
     submitBtn.addEventListener("click");
+}
+
+
+function showScores() {
+
+}
+
+function timer() {
+    timeRemaining--;
+    timerEl.textContent = "Seconds remaining: " + timeRemaining;
+    if (timeRemaining <= -1) {
+        clearInterval(countDown);
+    }
 }
 
