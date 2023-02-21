@@ -19,8 +19,10 @@ var randomQ;
 var countDown;
 var timeRemaining = 90;
 var currentQuestionIndex = 0;
-// var for collectScores?
-// var for "enter-highscores" - the div for entering initials
+var finalScore = document.getElementById("time-remaining");
+
+const highScoresList = document.getElementById("hs-board-list");
+
 
 var questions = [
     {   question: "What is 2+2",
@@ -79,14 +81,10 @@ function showQuestion(question) {
 
     a1.textContent = options[0].text;
     a2.textContent = options[1].text;
-
-    a1.value = options[1].isTrue;
-    a2.value = options[0].isTrue;
 }
 
-
 function selectAnswer(event) {
-    if (event.target.value === true) {
+    if (event.target.value == true) {
         currentQuestionIndex++;
         setNextQuestion();
     }
@@ -99,15 +97,17 @@ function selectAnswer(event) {
 
 function initEnd() {
     quizQuestionsBox.classList.add("hide");
+    hsSubmission.classList.remove("hide");
+    timerEl.classList.add("hide");
+    finalScore.textContent = "Your score is: " + timeRemaining;
+    submitBtn.addEventListener("click", HSBoard);
+}
+
+function HSBoard() {
+    hsSubmission.classList.add("hide");
     hsBoard.classList.remove("hide");
-    timerEl.textContent =  timeRemaining;
-    submitBtn.addEventListener("click");
 }
 
-
-function showScores() {
-
-}
 
 function timer() {
     timeRemaining--;

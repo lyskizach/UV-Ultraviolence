@@ -34,21 +34,16 @@
 
                 <div class="enter-highscores hide" id="high-score-submission">
                     <p>All Done!</p>
-                    <p>Your score is: <span id="time-remaining"></span></p>
+                    <p id="time-remaining"></p>
                     <label for="initials">Initials:</label>
                     <input type="text" id="initials" name="initials">
-                    <input type="submit" class="submit-button hide" id="submit-button">
+                    <input type="submit" class="button" id="submit-button">
                 </div>
 
                 <div id="score-board" class="hide">
                     <h1>All-time High Scores</h1>
-                    <ul class="high-score-board" id="hs-board"></ul>
+                    <ul class="high-score-board" id="hs-board-list"></ul>
                 </div>
-            </div>
-            <!--flash on screen? in new window>-->
-            <div id="feedback">
-                <p id="correct" class="hide">Correct!</p>
-                <p id="incorrect" class="hide">Incorrect!</p>
             </div>
         </div>
        <script src="script.js"></script>
