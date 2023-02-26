@@ -18,6 +18,7 @@ var countDown;
 var timeRemaining = 90;
 var currentQuestionIndex = 0;
 var finalScore = document.getElementById("time-remaining");
+var true1 = ["4", "25"];
 
 
 const endHighScores = JSON.parse(localStorage.getItem("endHighScores")) || [];
@@ -84,7 +85,7 @@ function showQuestion(question) {
 }
 
 function selectAnswer(event) {
-    if (event.target.value == true) {
+    if (event.target.value = true1) {
         currentQuestionIndex++;
         setNextQuestion();
     }
